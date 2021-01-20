@@ -5,8 +5,6 @@ $(function () {
         success: function (data) {
             var allowed = ["country", "cases", "deaths", "recovered", "active"];
 
-            $("#content").remove("#mini-table-cases-loader");
-
             // Create mini-table-cases
             var line = "<tr>";
             $.each(data[0], function (i, row) {
@@ -28,7 +26,7 @@ $(function () {
                         }
                         if (i === "country") {
                             line += "<td>";
-                            line += "<a href='index.html?country=" + cell + "'>" + cell + "</a>";
+                            line += "<a href='country.html?country=" + cell + "'>" + cell + "</a>";
                             line += "</td>";
                             console.log(line);
                         } else {
@@ -64,7 +62,7 @@ $(function () {
                         }
                         if (i === "country") {
                             line += "<td>";
-                            line += "<a href='index.html?country=" + cell + "'>" + cell + "</a>";
+                            line += "<a href='country.html?country=" + cell + "'>" + cell + "</a>";
                             line += "</td>";
                         } else {
                             line += "<td>" + cell + "</td>";
