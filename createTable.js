@@ -26,7 +26,7 @@ $(function () {
                         }
                         if (i === "country") {
                             line += "<td>";
-                            line += "<a href='country.html?country=" + cell + "'>" + cell + "</a>";
+                            line += "<a href='country.html?c=" + cell + "'>" + cell + "</a>";
                             line += "</td>";
                             console.log(line);
                         } else {
@@ -62,7 +62,7 @@ $(function () {
                         }
                         if (i === "country") {
                             line += "<td>";
-                            line += "<a href='country.html?country=" + cell + "'>" + cell + "</a>";
+                            line += "<a href='country.html?c=" + cell + "'>" + cell + "</a>";
                             line += "</td>";
                         } else {
                             line += "<td>" + cell + "</td>";
