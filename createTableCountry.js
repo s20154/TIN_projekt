@@ -5,7 +5,7 @@ $(function () {
         success: function (data) {
             var url = new URL(window.location.href);
             var c = url.searchParams.get("c");
-            console.log("USA");
+            console.log(c);
 
             // Create rest of the table
             $.each(data, function (i, row) {
