@@ -5,6 +5,43 @@ $(function () {
         success: function (data) {
             var allowed = ["country", "cases", "deaths", "recovered", "active"];
 
+            $("#content").remove("#mini-table-cases-loader");
+
+            // Create mini-table-cases
+            var line = "<tr>";
+            $.each(data[0], function (i, row) {
+                if (allowed.includes(i)) {
+                    line += "<th>" + i + "</th>";
+                }
+            })
+            line += "</tr>";
+            $("#mini-table-cases").append(line);
+            $.each(data, function (i, row) {
+                if(row["country"] == "World" || i > 10){
+                    return;
+                }
+                var line = "<tr>";
+                $.each(row, function (i, cell) {
+                    if (allowed.includes(i)) {
+                        if(cell == null){
+                            cell = 0;
+                        }
+                        if (i === "country") {
+                            line += "<td>";
+                            line += "<a href='index.html'>" + cell + "</a>";
+                            //line += "<a href='index.html?c=" + cell + "'>" + cell + "</a>";
+                            line += "</td>";
+                        } else {
+                            line += "<td>" + cell + "</td>";
+                        }
+                    }
+                })
+                line += "</tr>";
+                $("#mini-table-cases").append(line);
+            })
+
+            // Create big table
+            // Create headers
             var line = "<tr>";
             $.each(data[0], function (i, row) {
                 if (allowed.includes(i)) {
@@ -14,6 +51,7 @@ $(function () {
             line += "</tr>";
             $("#table").append(line);
 
+            // Create rest of the table
             $.each(data, function (i, row) {
                 if(row["country"] == "World"){
                     return;
@@ -37,6 +75,7 @@ $(function () {
                 line += "</tr>";
                 $("#table").append(line);
             })
+            sortTableString("table", 0);
 
             $("#table tr th:nth-child(1)").on("click", function () {
                 sortTableString("table", 0);
