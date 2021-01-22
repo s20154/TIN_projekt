@@ -6,17 +6,18 @@ body {
 table {
     margin: auto;
     text-align: left;
-    max-width: 60%;
-    min-width: 40%;
+    max-width: 68%;
 }
 h1 {
     padding: 10px 10px;
-    background-color: aqua; 
+    background-color: aqua;
+}
+h1:hover + .hide {
+    display: block;
 }
 
 table {
     width: 100%;
-   
 }
 
 th {
@@ -38,5 +39,34 @@ a {
 
 tr:hover {
     background-color:lime;
+    transform: scale(1.06);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
+
+.hide {
+    display: none;
+}
+
+img {
+    max-width: 10%;
+    max-height: 10%;
+    bottom: 5%;
+    position: absolute;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 2s;
+  }
+  @-webkit-keyframes run {
+    0% {
+      left: 20%;
+    }
+    50% {
+      left: 70%;
+    }
+    100% {
+      left: 20%;    
+    }
+  }
 
