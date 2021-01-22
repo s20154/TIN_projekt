@@ -39,7 +39,7 @@ a {
 
 tr:hover {
     background-color:lime;
-    transform: scale(1.06);
+    transform: scale(1.03);
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     transition: all .5s;
