@@ -43,7 +43,7 @@ $(function () {
             var line = "<tr>";
             $.each(data[0], function (i, row) {
                 if (allowed.includes(i)) {
-                    line += "<th>" + i + "</th>";
+                    line += "<th>" + i + " 🔼</th>";
                 }
             })
             line += "</tr>";
